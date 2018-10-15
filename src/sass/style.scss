@@ -229,7 +229,7 @@ body {
                             font-size: 13px;
                             color: $light-font;
                             font-family: $font-content;
-                            font-weight: 100px;
+                            font-weight: 100;
                             font-style: italic;
                             line-height: 20px;
                         }
@@ -252,10 +252,12 @@ body {
                     height: 248px;
                     .photo-block {
                         float: left;
-                       .photo {
-                            width: 200px;
-                            
-                       }                     
+                        .image {
+                            .photo {
+                                    width: 200px;
+                                    
+                            }     
+                        }
                     }
                     .name {
                         display: inline-block;
@@ -1032,7 +1034,303 @@ body {
                 }
             }
             .instruments {
-                
+                padding: 110px 120px 115px;
+                .instruments-list {
+                    display: block;
+                    .instruments-list-one {
+                        width: 100%;
+                        margin: 0;
+                        display: flex;
+                        justify-content: space-between;
+                        padding:0 30px 50px;
+                        border-bottom: 2px solid#e5e5e5;
+                        .item {
+                            margin-bottom: 0;
+                            display: block;
+                            margin-right: 20px;
+                            width: 30%;
+                            .photo {
+                                width: 30px;
+                                padding: 0;
+                                margin: 0 30px 80px 0;
+                            }
+                            .description {
+                                .title {
+                                    display: inline-block;
+                                    line-height: 0;
+                                    margin-bottom: 20px;
+                                }
+                                .info {
+                                    font-size: 15px;
+                                    line-height: 24px;
+                                }
+                            }
+                            &:last-of-type {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                    .instruments-list-two {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 50px 30px 0;
+                        .item {
+                            margin-bottom: 0;
+                            display: block;
+                            margin-right: 20px;
+                            .photo {
+                                width: 30px;
+                                padding: 0;
+                                margin: 0 30px 80px 0;
+                            }
+                            .description {
+                                .title {
+                                    display: inline-block;
+                                    line-height: 0;
+                                    margin-bottom: 20px;
+                                }
+                                .info {
+                                    font-size: 15px;
+                                    line-height: 24px;
+                                }
+                            }
+                            &:last-of-type {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .devices {
+                padding: 50px 0 0;
+                background-size: 1200px;
+                .image-blok {
+                    .tablet {
+                    width: 270px;
+                    }
+                    .phone {
+                        width: 112px;
+                        right: 33%;
+                    }
+                }
+            }
+            .services {
+                padding: 50px 120px 120px;
+                .services-block {
+                    display: flex;
+                    margin-top: 85px;
+                    .photo {
+                        width: 50%;
+                        height: 100%;
+                        margin: 0;
+                    }
+                    .services-list {
+                        width: 50%;
+                        padding-left: 20px;
+                        .title-block {
+                            border: 1px solid#e5e5e5;
+                            width: 100%;
+                            margin: 0;
+                            .icon {
+                                width: 30px;
+                                padding: 15px;
+                                margin: 0;
+                            }
+                            .name {
+                                line-height: 55px;
+                            }
+                        }
+                        .info-block {
+                            margin-bottom: 10px;
+                            overflow: auto;
+                            height: 105px;
+                            border: 1px solid #e5e5e5;
+                            .text {
+                                padding: 20px;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+            .comments {
+                display: block;
+                background: #f8f8f8;
+                padding: 70px 120px;
+                .comment {
+                    display: flex;
+                    .photo {
+                        padding: 40px;
+                        border: 2px solid #95e1d3;
+                        margin-right: 50px;
+                        width: 65px;
+                        height: 60px;
+                        display: block;
+                    }
+                    .info {
+                        .text {
+                            font-size: 24px;
+                            font-weight: 100;
+                            font-style: italic;
+                            line-height: 36px;
+                            font-family: $font-content;
+                            color: $light-font;
+                            &:before {
+                                content: "“";
+                            }
+                            &:after {
+                                content: "”";
+                                
+                            }
+                        }
+                        .author {
+                            margin-top: 25px;
+                            display: block;
+                            font-size: 24px;
+                            font-family: $font-title;
+                            color: $dark-font;
+                            &:before {
+                                content: "";
+                                width: 60px;
+                                height: 2px;
+                                background: #f38181;
+                                vertical-align: middle;
+                                margin-right: 10px;
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
+            .team-block {
+                padding: 100px 120px 110px;
+                .description {
+                    margin: 0;
+                }
+                .team-list {
+                    justify-content: space-between;
+                    margin-top: 95px;
+                    .item {
+                        position: relative;
+                        .photo-block {
+                            background: #95e1d3;
+                            .image {
+                                position: relative;
+                                bottom: 0;
+                                right: 0;
+                                transition: all ease 0.5s;
+                                .photo {
+                                    width: 230px;
+                                    height: 100%;
+                                    display: block;
+                                    
+                                }
+                                .hover-block {
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    top: 0;
+                                    left: 0;
+                                    background: linear-gradient(to top, #eed789, #e98683);
+                                    opacity: 0;
+                                }
+                            }
+                            &:hover {
+                                .image {
+                                    bottom: 10px;
+                                    right: 10px;
+                                    .photo {
+                                        bottom: 10px;
+                                        right: 10px;
+                                    }
+                                    .hover-block {
+                                        opacity: 0.9;
+                                    }
+                                }
+                                .social-list {
+                                    display: flex;
+                                }
+                            }
+                        }
+                        .name {
+                            margin: 30px 0 0;
+                            .worker {
+                                font-size: 14px;
+                            }
+                            .position {
+                                font-size: 15px;
+                                line-height: 24px;
+                            }
+                        }
+                        .social-list {
+                            display: none;
+                            position: absolute;
+                            bottom: 51%;
+                            left: 50%;
+                            transform: translate(-57%);
+                            .item {
+                                margin: 0;
+                                display: block;
+                                background: #fce38a;
+                                padding: 20px 15px 15px;
+                                border-right: 1px solid #f38181;
+                                &:last-of-type {
+                                    border-right: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .brands {
+                margin: 0;
+                padding: 65px 120px;
+                .brands-list {
+                   height: 85px;
+                   .item {
+                       width: 90px;
+                   }
+                }
+            }
+            .our-works {
+                margin: 0;
+                padding: 110px 0 0;
+                .works-list {
+                    margin: 100px 0 0;
+                    display: flex;
+                    width: 100%;
+                    height: 415px;
+                    .left-block {
+                        width: 50%;
+                        .item {
+                            margin: 0;
+                            .photo {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                    .right-block {
+                        display: flex;
+                        .item {
+                            width: 50%;
+                            height: 100%;
+                            .photo {
+                                height: 100%;
+                            }
+                        }
+                        .right-part {
+                            width: 50%;
+                            .item-part {
+                                height: 50%;
+                                .photo {
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
