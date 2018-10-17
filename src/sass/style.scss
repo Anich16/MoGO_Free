@@ -249,14 +249,40 @@ body {
             .team-list {
                 .item {
                     margin: 25px 0 0 10%;
-                    height: 248px;
+                    height: 275px;
                     .photo-block {
                         float: left;
                         .image {
                             .photo {
                                     width: 200px;
                                     
-                            }     
+                            }  
+                            .social-list {
+                                height: 25px;
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-around;
+                                .item-icon {
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    background-size: 20px;
+                                    display: inline-block;
+                                    padding: 10px;
+                                    
+                                }
+                                .facebook {
+                                   background-image: url(images/facebook-pink.png) 
+                                }
+                                .twitter {
+                                    background-image: url(images/twitter-pink.png)
+                                }
+                                .pininterest {
+                                    background-image: url(images/pinterest-pink.png)
+                                }
+                                .instagram {
+                                    background-image: url(images/instagram-pink.png)
+                                }
+                            }   
                         }
                     }
                     .name {
@@ -276,15 +302,6 @@ body {
                             font-style: italic;
                         }
                     }
-                    .social-list {
-                        margin-left: 220px;
-                        .item {
-                            margin-right: 5px;
-                            .icon {
-                                width: 20px;
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -300,6 +317,9 @@ body {
                 margin: 20px;
                 .description {
                     padding: 0 10%;
+                }
+                .hover-block {
+                    display:none;
                 }
                 .left-block {
                     display: flex;
@@ -318,6 +338,9 @@ body {
                     display: none;
                 }
             }
+        }
+        .comment {
+            display: none;
         }
         .reviews-block {
             .reviews-list {
@@ -338,8 +361,8 @@ body {
                         }
                         .text {
                             font-family: $font-content;
-                            font-size: 14px;
-                            color: $light-font;
+                            font-size: 15px;
+                            color: $dark-font;
                             text-transform: none;
                             font-weight: 100;
                             font-style: italic;
@@ -426,11 +449,14 @@ body {
                         .num {
                             display: block;
                             font-size: 20px;
-                            fony-family: $font-text;
+                            font-family: $font-text;
                             font-weight: bold;
                         }
                         .month {
                             font-size: 12px;
+                            font-family: $font-content;
+                            font-style: italic;
+                            font-weight: 100;
                         }
                     }
                 }
@@ -563,7 +589,7 @@ body {
         padding: 25px;
         margin-top: 20px;
         text-align: center;
-        border: 1px solid #e5e5e5;
+        border-top: 1px solid #e5e5e5;
         .copyright {
             font-size: 12px;
             font-family: $font-text;
@@ -693,7 +719,7 @@ body {
                 background-image: url(images/wrapper1.jpg);
                 background-size: 1030px;
                 padding: 30px 0 0;
-                .image-blok {
+                .image-block {
                     position: relative;
                     .tablet {
                         width: 245px;
@@ -723,14 +749,19 @@ body {
                         height: 100%;
                         .photo-block {
                             float: none;
+                            .image {
+                                 .social-list {
+                                    margin: 0;
+                                    margin-top: 10px;
+                                    
+                                }
+                            }
                         }
                         .name {
                             display: block;
                             margin: 20px 0;
                         }
-                        .social-list {
-                            margin: 0;
-                        }
+                       
                     }
                 }
             }
@@ -1105,7 +1136,7 @@ body {
             .devices {
                 padding: 50px 0 0;
                 background-size: 1200px;
-                .image-blok {
+                .image-block {
                     .tablet {
                     width: 270px;
                     }
@@ -1132,6 +1163,7 @@ body {
                             border: 1px solid#e5e5e5;
                             width: 100%;
                             margin: 0;
+                            position: relative;
                             .icon {
                                 width: 30px;
                                 padding: 15px;
@@ -1139,6 +1171,21 @@ body {
                             }
                             .name {
                                 line-height: 55px;
+                            }
+                            .ui-icon {
+                                position: absolute;
+                                right: 5%;
+                                width: 24px;
+                                height: 24px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            
+                                &.icon-arrow {
+                                    background-image: url(images/arrow-down.png);
+                                }
+                                &.icon-arrow-active {
+                                    background-image: url(images/up-arrow.png);
+                                }
                             }
                         }
                         .info-block {
@@ -1158,9 +1205,11 @@ body {
                 display: block;
                 background: #f8f8f8;
                 padding: 70px 120px;
-                .comment {
+                position: relative;
+                .comment-content {
                     display: flex;
-                    .photo {
+                    
+                    .icon {
                         padding: 40px;
                         border: 2px solid #95e1d3;
                         margin-right: 50px;
@@ -1200,11 +1249,26 @@ body {
                                 display: inline-block;
                             }
                         }
+                        
+                    }
+                    .arrow-block {
+                        .arrow {
+                            position: absolute;
+                            width: 30px;
+                            bottom: 50%;
+                        }
+                        .left {
+                            left: 7%;
+                        }
+                        .right {
+                            right: 7%;
+                        }
                     }
                 }
             }
             .team-block {
                 padding: 100px 120px 110px;
+                margin: 0;
                 .description {
                     margin: 0;
                 }
@@ -1235,6 +1299,40 @@ body {
                                     background: linear-gradient(to top, #eed789, #e98683);
                                     opacity: 0;
                                 }
+                                .social-list {
+                                    display: none;
+                                    position: absolute;
+                                    justify-content: center;
+                                    bottom: 46%;
+                                    left: 50%;
+                                    transform: translate(-50%);
+                                    .item-icon {
+                                           padding: 20px;
+                                            border-right: 1px solid #f38181;
+                                            background-color: #fce38a;
+                                            background-size: 25px;
+                                        &:last-of-type {
+                                            border-right: none;
+                                        }
+                                        &:hover {
+                                            
+                                                background-color: #f38181;
+                                            
+                                            &.facebook{
+                                                background-image: url(images/facebook-white.png);
+                                            } 
+                                            &.twitter {
+                                                background-image: url(images/twitter-white.png);
+                                            }
+                                            &.pininterest {
+                                                background-image: url(images/pinterest-white.png);
+                                            }
+                                            &.instagram {
+                                                background-image: url(images/instagram-white.png);
+                                            }
+                                        }
+                                    }
+                                }
                             }
                             &:hover {
                                 .image {
@@ -1250,6 +1348,7 @@ body {
                                 }
                                 .social-list {
                                     display: flex;
+                                    
                                 }
                             }
                         }
@@ -1263,23 +1362,7 @@ body {
                                 line-height: 24px;
                             }
                         }
-                        .social-list {
-                            display: none;
-                            position: absolute;
-                            bottom: 51%;
-                            left: 50%;
-                            transform: translate(-57%);
-                            .item {
-                                margin: 0;
-                                display: block;
-                                background: #fce38a;
-                                padding: 20px 15px 15px;
-                                border-right: 1px solid #f38181;
-                                &:last-of-type {
-                                    border-right: none;
-                                }
-                            }
-                        }
+                        
                     }
                 }
             }
@@ -1296,15 +1379,64 @@ body {
             .our-works {
                 margin: 0;
                 padding: 110px 0 0;
+                .description  {
+                    padding: 0 15%;
+                }
                 .works-list {
                     margin: 100px 0 0;
                     display: flex;
                     width: 100%;
-                    height: 415px;
+                    height: 100%;
+                    .hover-block {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient( to top, #eed789, #e98683);
+                        opacity: 0;
+                        transition: all ease 0.5s;
+                        .content {
+                            display: none;
+                            .photo {
+                                display: block;
+                            }
+                            .title-link {
+                                display: block;
+                                color: #fff;
+                                text-decoration: none;
+                                text-transform: uppercase;
+                                margin: 20px 0 15px;
+                                font-size: 14px;
+                                font-family: $font-text;
+                            }
+                            .text-link {
+                                display: block;
+                                color: #fff;
+                                text-decoration: none;
+                                font-size: 15px;
+                                font-style: italic;
+                                font-weight: 100;
+                                font-family: $font-content;
+                            }
+                        }
+                    }
                     .left-block {
                         width: 50%;
                         .item {
                             margin: 0;
+                            position: relative;
+                            &:hover {
+                                .hover-block {
+                                    opacity: 0.9;
+                                    .content {
+                                        display: block;
+                                        margin-top: 25%;
+                                    }
+                                }
+                            }
+                            
                             .photo {
                                 width: 100%;
                                 height: 100%;
@@ -1313,25 +1445,581 @@ body {
                     }
                     .right-block {
                         display: flex;
+                        width: 50%;
                         .item {
                             width: 50%;
                             height: 100%;
+                            position: relative;
+                             &:hover {
+                                .hover-block {
+                                    opacity: 0.9;
+                                    .content {
+                                        display: block;
+                                        text-align:center;
+                                        margin-top: 50%;
+                                    }
+                                }
+                            }
                             .photo {
                                 height: 100%;
+                                width: 100%;
                             }
                         }
                         .right-part {
                             width: 50%;
                             .item-part {
                                 height: 50%;
+                                position: relative;
+                                 &:hover {
+                                    .hover-block {
+                                        opacity: 0.9;
+                                        .content {
+                                            display: block;
+                                            text-align: center;
+                                            margin-top: 25%;
+                                        }
+                                    }
+                                }
                                 .photo {
                                     height: 100%;
+                                    width: 100%;
                                 }
                             }
                         }
                     }
                 }
             }
+            .comment {
+                display: block;
+                background: #fff;
+                padding: 70px 120px;
+                position: relative;
+                .comment-content {
+                    display: flex;
+                    .photo {
+                        margin-right: 50px;
+                        display: block;
+                        width: 180px;
+                        height: 180px;
+                        border-radius: 50%;
+                    }
+                    .info {
+                        .text {
+                            font-size: 24px;
+                            font-weight: 100;
+                            font-style: italic;
+                            line-height: 36px;
+                            font-family: $font-content;
+                            color: $light-font;
+                            &:before {
+                                content: "“";
+                            }
+                            &:after {
+                                content: "”";
+                                
+                            }
+                        }
+                        .author {
+                            margin-top: 25px;
+                            display: block;
+                            font-size: 24px;
+                            font-family: $font-title;
+                            color: $dark-font;
+                            &:before {
+                                content: "";
+                                width: 60px;
+                                height: 2px;
+                                background: #f38181;
+                                vertical-align: middle;
+                                margin-right: 10px;
+                                display: inline-block;
+                            }
+                        }
+                    }
+                    .arrow-block {
+                        .arrow {
+                            position: absolute;
+                            width: 30px;
+                            bottom: 50%;
+                        }
+                        .left {
+                            left: 7%;
+                        }
+                        .right {
+                            right: 7%;
+                        }
+                    }
+                }
+            }
+            .reviews-block {
+                padding: 70px 120px 60px;
+                .reviews-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    .item {
+                        width: 45%;
+                        margin-bottom: 60px;
+                        .description {
+                            margin-left: 155px;
+                        }
+                    }
+                }
+            }
+            .blog-block {
+                margin: 0;
+                padding: 105px 120px 115px;
+                .blog-list {
+                    justify-content: space-between;
+                    .item {
+                        .photo {
+                            width: 100%;
+                        }
+                        .info {
+                            margin-top: 20px;
+                            padding: 0;
+                            text-align: left;
+                            height: 130px;
+                            .title {
+                                height: 26px;
+                            }
+                            .text {
+                                font-size: 15px;
+                                line-height: 24px;
+                                margin: 15px 0;
+                            }
+                        }
+                        .interest {
+                            .views {
+                                .number {
+                                    font-size: 15px;
+                                    line-height: 24px;
+                                    margin: 0 0 0 5px;
+                                }
+                            }
+                            .comment {
+                                padding: 0;
+                                .namber {
+                                    font-size: 15px;
+                                    line-height: 24px;
+                                    margin: 0 0 0 5px;
+                                }
+                            }
+                        }
+                        .date {
+                            padding: 15px;
+                            bottom: 59%;
+                            left: -8%;
+                            .num {
+                                font-size: 30px;
+                            }
+                            .month {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+            .map-block {
+                padding: 45px 0 50px;
+                background-reapeat: no-repeat;
+            }
+            .contacts-block {
+                padding: 75px 120px 65px;
+                .contacts {
+                    margin-right: 25px;
+                    .logo-link {
+                        font-size: 46px;
+                        margin-bottom: 40px;
+                        display: block;
+                    }
+                    .info {
+                        font-size: 15px;
+                        line-height: 24px;
+                    }
+                    .followers-list {
+                        margin: 50px 0 40px;
+                        .info {
+                            font-size: 14px;
+                            .number {
+                                font-size: 18px;
+                            }
+                        }
+                        .follow {
+                            font-size: 14px;
+                            line-height: 24px;
+                            margin-top: 20px;
+                            display: inline-block;
+                        }
+                        .list {
+                            margin: 0;
+                            display: inline-block;
+                            margin-left: 10px;
+                            .item {
+                                margin-right: 10px;
+                                &:last-of-type {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+                    .message {
+                        display: flex;
+                        width: 94%;
+                        .label {
+                            padding: 15px 10px;
+                            font-size: 15px;
+                            width: 60%;
+                            margin-bottom: 0;
+                            font-weight: 100;
+                            font-style: italic;
+                        }
+                        .button {
+                            width: 40%;
+                            padding: 15px 15px;
+                            border: 1px solid #95e1d3;
+                            font-size: 14px;
+                            color: #fff;
+                            font-weight: 800;
+                        }
+                    }
+                }
+                .title {
+                    font-size: 14px;
+                    margin-bottom: 40px;
+                }
+                .blog-list {
+                    margin-right: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    .item {
+                        margin-bottom: 15px;
+                        .link {
+                            display: block;
+                            float: left;
+                            height: 105px;
+                            .photo {
+                                width: 100px;
+                            }
+                        }
+                        .info {
+                            font-size: 12px;
+                            line-height: 18px;
+                            margin-left: 115px;
+                        }
+                        .date {
+                            margin-left: 115px;
+                            display: block;
+                            font-size: 13px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+                .instagram {
+                    .insta-list {
+                        .link {
+                            margin-bottom: 5px;
+                            .photo {
+                                width: 85px;
+                            }
+                            &:last-of-type {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
         }
+        .footer {
+            padding: 0 0 50px;
+            border-top: none;
+            .copyright {
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 80%;
+                    height: 2px;
+                    background: #e5e5e5;
+                    margin: 0 auto 30px;
+                    
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1200px){
+    body {
+        .header {
+            padding: 20px 200px;
+            background-size: 100%;
+            .main-menu {
+                .logo-block {
+                    margin-right: 10%;
+                }
+                .menu {
+                    margin-left: 15%
+                }
+            }
+            .description {
+                margin: 40px 0;
+            }
+        }
+        .wrapper {
+            .projects {
+                padding: 90px 200px 110px;
+                .projects-list {
+                    .item {
+                        margin-right: 20px;
+                        .photo-block {
+                            .photo {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .progress {
+                padding: 0 200px;
+            }
+            .instruments {
+                padding: 110px 200px 115px;
+                .instruments-list {
+                    .instruments-list-one {
+                        .item {
+                            height: 100%;
+                        }
+                    }
+                    .instruments-list-two {
+                        .item {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+            .devices {
+                background-size: 100%;
+                padding: 45px 0 0;
+                .image-block {
+                    .phone {
+                        right: 36%;
+                    }
+                }
+            }
+            .services {
+                padding: 50px 200px 120px;
+            }
+            .comments {
+                padding: 70px 200px;
+            }
+            .team-block {
+                padding: 100px 200px 110px;
+                .team-list {
+                    .item {
+                        margin-right: 20px;
+                        .photo-block {
+                            .image {
+                                .photo {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+            .brands {
+                padding: 65px 200px;
+            }
+            .our-works {
+                .description {
+                    padding: 0 20%;
+                }
+            }
+            .comment {
+                padding: 70px 200px;
+            }
+            .reviews-block {
+                padding: 70px 200px 60px;
+            }
+            .blog-block {
+                padding: 105px 200px 115px;
+            }
+            .contacts-block {
+                padding: 75px 200px 65px;
+            }
+        }
+    }
+}
+@media screen and (min-width: 1400px){
+    body {
+        .header {
+            padding: 30px 300px;
+            .main-menu {
+                .logo-block {
+                    margin-right: 3%;
+                }
+            }
+            .description {
+                margin: 60px 0;
+                padding: 0 7%;
+                .title {
+                    font-size: 72px;
+                }
+                .text {
+                    font-size: 120px;
+                    line-height: 110px;
+                }
+            }
+        }
+        .wrapper {
+            .projects {
+                padding: 90px 300px 110px;
+            }
+            .progress {
+                padding: 0 300px;
+            }
+            .instruments {
+                padding: 110px 300px 115px;
+            }
+            .devices {
+                padding: 65px 0 0;
+                .image-block {
+                    .tablet {
+                        width: 335px;
+                    }
+                    .phone {
+                        width: 139px;
+                    }
+                }
+            }
+            .services {
+                padding: 50px 300px 120px;
+            }
+            .comments {
+                padding: 70px 300px;
+                .comment-content {
+                    .arrow-block {
+                        .left {
+                            left: 15%;
+                        }
+                        .right {
+                            right: 15%;
+                        }
+                    }
+                }
+            }
+            .team-block {
+                padding: 100px 300px 110px;
+            }
+            .brands {
+                padding: 65px 300px;
+            }
+            .our-works {
+                .description {
+                    padding: 0 25%;
+                }
+            }
+            .comment {
+                padding: 70px 300px;
+                .comment-content {
+                    .arrow-block {
+                        .left {
+                            left: 15%;
+                        }
+                        .right {
+                            right: 15%;
+                        }
+                    }
+                }
+            }
+            .reviews-block {
+                padding: 70px 300px 60px;
+            }
+            .blog-block {
+                padding: 105px 300px 115px;
+            }
+            .contacts-block {
+                padding: 75px 300px 65px;
+            }
+        }
+        .footer {
+            .copyright{
+                &:before {
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1600px){
+    body {
+       .header {
+            padding: 30px 350px;
+            .main-menu {
+                .logo-block {
+                    margin-right: 10%;
+                }
+                .menu {
+                    margin-left: 20%;
+                }
+            }
+            .description {
+                padding: 0 8%;
+                margin: 80px 0;
+                .text {
+                    font-size: 150px;
+                    line-height: 140px;
+                }
+            }
+       }
+       .wrapper {
+            .projects {
+                padding: 90px 350px 110px;
+            }
+            .progress {
+                padding: 0 350px;
+            }
+            .instruments {
+                padding: 110px 350px 115px;
+            }
+            .devices {
+                padding: 72px 0 0;
+                .image-block {
+                    .tablet {
+                        width: 400px;
+                    }
+                    .phone {
+                        width: 155px;
+                    }
+                }
+            }
+            .services {
+                padding: 50px 350px 120px;
+            }
+            .comments {
+                padding: 70px 350px;
+            }
+            .team-block {
+                padding: 100px 350px 110px;
+            }
+            .brands {
+                padding: 65px 350px;
+            }
+            .comment {
+                padding: 70px 350px;
+            }
+            .reviews-block {
+                padding: 70px 350px 60px;
+            }
+            .blog-block {
+                padding: 105px 350px 115px;
+            }
+            .contacts-block {
+                padding: 75px 350px 65px;
+            }
+       }
+
     }
 }
