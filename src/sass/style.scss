@@ -207,8 +207,11 @@ body {
                 }
                 .services-list {
                     .title-block {
-                        margin-bottom: 10px;
-                        display: inline-block;
+                        width: 100%;
+                        display: block;
+                        border: 1px solid #e5e5e5;
+                        padding: 5px;
+                        margin-top: 10px;
                         .icon {
                             float: left;
                             margin-right: 10px;
@@ -221,10 +224,20 @@ body {
                             font-family: $font-text;
                             color: $dark-font;
                         }
+                        &:focus {
+                            outline: none;
+                        }
+                        &:first-of-type {
+                            margin-top: 0;
+                        }
                     }
                     .info-block {
+                        padding: 5px;
                         clear: both;
+                        width: 100%;
                         margin-bottom: 15px;
+                        overflow: auto;
+                        border: 1px solid #e5e5e5;
                         .text {
                             font-size: 13px;
                             color: $light-font;
@@ -921,7 +934,7 @@ body {
             }
             .description {
                 margin: 48px 0 38px;
-                padding: 0 14%;
+                padding: 0 18%;
                 .title {
                     font-size: 60px;
                 }
@@ -1163,6 +1176,7 @@ body {
                             border: 1px solid#e5e5e5;
                             width: 100%;
                             margin: 0;
+                            margin-top: 10px;
                             position: relative;
                             .icon {
                                 width: 30px;
@@ -1187,11 +1201,23 @@ body {
                                     background-image: url(images/up-arrow.png);
                                 }
                             }
+                            .ui-state-hover {
+
+                            }
+                            &:focus {
+                                
+                                outline: none;
+
+                            }
+                            &:first-of-type {
+                                margin-top: 0;
+                            }
                         }
                         .info-block {
                             margin-bottom: 10px;
                             overflow: auto;
                             height: 105px;
+                           
                             border: 1px solid #e5e5e5;
                             .text {
                                 padding: 20px;
@@ -1252,16 +1278,18 @@ body {
                         
                     }
                     .arrow-block {
-                        .arrow {
-                            position: absolute;
-                            width: 30px;
-                            bottom: 50%;
-                        }
-                        .left {
-                            left: 7%;
-                        }
-                        .right {
-                            right: 7%;
+                        .link {
+                            .arrow {
+                                position: absolute;
+                                width: 30px;
+                                bottom: 50%;
+                            }
+                            .left {
+                                left: 7%;
+                            }
+                            .right {
+                                right: 7%;
+                            }
                         }
                     }
                 }
@@ -1537,16 +1565,18 @@ body {
                         }
                     }
                     .arrow-block {
-                        .arrow {
-                            position: absolute;
-                            width: 30px;
-                            bottom: 50%;
-                        }
-                        .left {
-                            left: 7%;
-                        }
-                        .right {
-                            right: 7%;
+                        .link {
+                            .arrow {
+                                position: absolute;
+                                width: 30px;
+                                bottom: 50%;
+                            }
+                            .left {
+                                left: 7%;
+                            }
+                            .right {
+                                right: 7%;
+                            }
                         }
                     }
                 }
@@ -1901,11 +1931,13 @@ body {
                 padding: 70px 300px;
                 .comment-content {
                     .arrow-block {
-                        .left {
-                            left: 15%;
-                        }
-                        .right {
-                            right: 15%;
+                        .link {
+                            .left {
+                                left: 15%;
+                            }
+                            .right {
+                                right: 15%;
+                            }
                         }
                     }
                 }
@@ -1925,11 +1957,13 @@ body {
                 padding: 70px 300px;
                 .comment-content {
                     .arrow-block {
-                        .left {
-                            left: 15%;
-                        }
-                        .right {
-                            right: 15%;
+                        .link {
+                            .left {
+                                left: 15%;
+                            }
+                            .right {
+                                right: 15%;
+                            }
                         }
                     }
                 }
