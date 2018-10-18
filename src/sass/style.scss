@@ -49,7 +49,7 @@ $light-font: #999999;
 ::-webkit-scrollbar-button {
 background-image:url('');
 background-repeat:no-repeat;
-width:4px;
+width:3px;
 height:0px;
 }
 
@@ -70,12 +70,12 @@ background-color:#95e1d3;
 ::-webkit-resizer{
 background-image:url('');
 background-repeat:no-repeat;
-width:4px;
+width:3px;
 height:0px;
 }
 
 ::-webkit-scrollbar{
-width: 4px;
+width: 3px;
 }
 
 .description {
@@ -520,9 +520,11 @@ body {
         }
         .contacts-block {
             display: flex;
+            flex-direction: column;
             .contacts {
-                width: 45%;
-                margin-right: 15px;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
                 .logo-link {
                     font-size: 25px;
                     text-decoration: none;
@@ -556,10 +558,13 @@ body {
                         color: $light-font;
                         font-weight: 100;
                         font-style: italic;
+                        margin-right: 15px;
                     }
                     .list {
                         margin-top: 10px;
+                        display: inline-block;
                         .item {
+                            margin-right: 10px;
                             .icon {
                                 width: 16px;
                             }
@@ -569,16 +574,18 @@ body {
                 .message {
                     .label {
                         padding: 5px;
-                        width: 90%;
+                        width: 97%;
                         margin-bottom: 10px;
                         outline: none;
                     }
                     .button {
-                        width: 95%;
+                        width: 50%;
                         padding: 5px;
                         background: #95e1d3;
                         border: none;
                         text-align: center;
+                        display: block;
+                        margin: 0 auto;
                     }
                 }   
             }
@@ -590,10 +597,17 @@ body {
                 margin-bottom: 15px;
             }
             .blog-list {
-                width: 25%;
-                margin-right: 15px;
+                width: 100%;
+                
                 .item {
-                    margin-bottom: 10px;
+                    height: 80px;
+                    margin-bottom: 15px;
+                    .link {
+                        float: left;
+                        display: block;
+                        margin-right: 10px;
+                        clear: both;
+                    }
                    .info {
                        text-decoration: none;
                         font-size: 10px;
@@ -601,6 +615,7 @@ body {
                         font-family: $font-text;
                         color: $dark-font;
                         display: block;
+                        padding: 10px;
                             text-transform: uppercase;
                    }
                    .date {
@@ -610,18 +625,22 @@ body {
                         color: $light-font;
                         font-weight: 100;
                         font-style: italic;
+                        margin-top: 5px;
                    }
                 }
             }
             .instagram {
-                width: 30%;
+                width: 100%;
                 .insta-list {
                     display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
+                    overflow: auto;
+                    
+                    
                     .link {
-                            &:last-of-type {
-                            display: none;
+                        margin-right: 40px;
+                        padding: 10px;
+                            .photo {
+                                width: 110px;
                             }
                         
 
@@ -906,7 +925,7 @@ body {
                 .contacts {
                     .message {
                         .button {
-                            width: 94%;
+                            
                         }
                     }
                 }
@@ -1720,9 +1739,10 @@ body {
             }
             .contacts-block {
                 padding: 75px 120px 65px;
+                flex-direction: row;
                 .contacts {
                     margin-right: 25px;
-                    width: 43%;
+                    width: 41%;
                     .logo-link {
                         font-size: 46px;
                         margin-bottom: 40px;
@@ -1789,7 +1809,8 @@ body {
                     flex-direction: column;
                     width: 27%;
                     .item {
-                        margin-bottom: 15px;
+                        margin-bottom: 25px;
+                        height: 100px;
                         .link {
                             display: block;
                             float: left;
@@ -1802,26 +1823,31 @@ body {
                             font-size: 12px;
                             line-height: 18px;
                             margin-left: 115px;
+                            padding: 0;
+                            
                         }
                         .date {
                             margin-left: 115px;
                             display: block;
                             font-size: 13px;
+                            margin-top: 0;
                             line-height: 24px;
                         }
                     }
                 }
                 .instagram {
+                    width: 32%;
                     .insta-list {
+                            overflow: upset;
+                            flex-wrap:wrap;
                             justify-content: start;
                         .link {
                             margin-right: 2px;
+                            padding: 0;
                             .photo {
                                 width: 85px;
                             }
-                            &:last-of-type {
-                                display: block;
-                            }
+                           
                         }
                     }
                 }
