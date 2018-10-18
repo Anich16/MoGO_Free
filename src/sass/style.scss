@@ -46,6 +46,38 @@ $font-content:'Roboto';
 $dark-font: #333333;
 $light-font: #999999; 
 
+::-webkit-scrollbar-button {
+background-image:url('');
+background-repeat:no-repeat;
+width:4px;
+height:0px;
+}
+
+::-webkit-scrollbar-track {
+background-color:#f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+-webkit-border-radius: 0px;
+border-radius: 5px;
+background-color:#95e1d3;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background-color:#95e1d3;
+}
+
+::-webkit-resizer{
+background-image:url('');
+background-repeat:no-repeat;
+width:4px;
+height:0px;
+}
+
+::-webkit-scrollbar{
+width: 4px;
+}
+
 .description {
     text-align: center;
     display: block;
@@ -65,7 +97,7 @@ $light-font: #999999;
             content: "";
             width: 60px;
             background: #f38181;
-            height: 2px;
+            height: 3px;
             display: block;
             margin: 20px auto 22px;
         }
@@ -103,8 +135,9 @@ body {
                             text-transform: uppercase;
                             font-weight: 800;
                             font-size: 20px;
+                            font-family: $font-text;
                             border: 2px solid;
-                            padding: 5px;
+                            padding: 1px;
                         }
                     }
                 }
@@ -207,8 +240,11 @@ body {
                 }
                 .services-list {
                     .title-block {
-                        margin-bottom: 10px;
-                        display: inline-block;
+                        width: 100%;
+                        display: inline-block;                          display: block;
+                        border: 1px solid #e5e5e5;
+                        padding: 5px;
+                        margin-top: 10px;
                         .icon {
                             float: left;
                             margin-right: 10px;
@@ -221,10 +257,20 @@ body {
                             font-family: $font-text;
                             color: $dark-font;
                         }
+                        &:focus {
+                            outline: npne;
+                        }
+                        &:first-of-type {
+                            margin-top: 0;
+                        }
                     }
                     .info-block {
-                        clear: both;
-                        margin-bottom: 15px;
+                        padding: 5px;
+                        clear: both;                            clear: both;
+                        width: 100%;
+                        margin-bottom: 15px;                            margin-bottom: 15px;
+                        overflow: auto;
+                        border: 1px solid #e5e5e5;
                         .text {
                             font-size: 13px;
                             color: $light-font;
@@ -249,9 +295,10 @@ body {
             .team-list {
                 .item {
                     margin: 25px 0 0 10%;
-                    height: 275px;
+                    height: 248px;
                     .photo-block {
                         float: left;
+                        position: relative;
                         .image {
                             .photo {
                                     width: 200px;
@@ -259,6 +306,10 @@ body {
                             }  
                             .social-list {
                                 height: 25px;
+                                position: absolute;
+                                width: 200px;
+                                left: 100%;
+                                bottom: 140px;
                                 width: 100%;
                                 display: flex;
                                 justify-content: space-around;
@@ -420,6 +471,7 @@ body {
                             .number {
                                 font-size: 16px;
                                 display: block;
+                                font-style: italic;
                                 margin: 3px 0 0 5px;
                             }
                         }
@@ -434,6 +486,7 @@ body {
                             .number {
                                 font-size: 16px;
                                 display: block;
+                                font-style: italic;
                                 margin: 3px 0 0 5px;
                             }
                         }
@@ -441,11 +494,11 @@ body {
                     .date {
                         position: absolute;
                         display: block;
-                        bottom: 35%;
+                        bottom: 46%;
                         background: #95e1d3;
                         padding: 10px;
                         color: #fff;
-                        left: 23%;
+                        left: 29%;
                         .num {
                             display: block;
                             font-size: 20px;
@@ -521,7 +574,7 @@ body {
                         outline: none;
                     }
                     .button {
-                        width: 80%;
+                        width: 95%;
                         padding: 5px;
                         background: #95e1d3;
                         border: none;
@@ -548,6 +601,7 @@ body {
                         font-family: $font-text;
                         color: $dark-font;
                         display: block;
+                            text-transform: uppercase;
                    }
                    .date {
                         display: block;
@@ -641,6 +695,7 @@ body {
                             }
                             .link {
                                 font-size: 18px;
+                                
                             }
                         }
                     }
@@ -683,7 +738,8 @@ body {
                     text-transform: uppercase;
                     color: #fff;
                     font-weight: 800;
-                    padding: 10px 15px;
+                    font-family: $font-text;
+                    padding: 10px 30px;
                     border: 2px solid #fff;
                     display: inline-block;
                     margin-top: 20px;
@@ -718,20 +774,24 @@ body {
                 background-repeat: no-repeat;
                 background-image: url(images/wrapper1.jpg);
                 background-size: 1030px;
-                padding: 30px 0 0;
+                padding: 30px 0 276px;
+                position: relative;
                 .image-block {
-                    position: relative;
                     .tablet {
-                        width: 245px;
+                        width: 220px;
+                        height:272px;
                         display: block;
-                        margin: 0 auto 0;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-50%);
                     }
                     .phone {
                         display: block;
                         position: absolute;
-                        width: 100px;
+                        width: 95px;
                         bottom: -35px;
-                        right: 32%;
+                        right: 33%;
                     }
                 }
             }
@@ -752,6 +812,7 @@ body {
                             .image {
                                  .social-list {
                                     margin: 0;
+                                    position: static;
                                     margin-top: 10px;
                                     
                                 }
@@ -842,6 +903,13 @@ body {
             .contacts-block {
                 padding: 40px 25px 20px;
                 background: #f8f8f8;
+                .contacts {
+                    .message {
+                        .button {
+                            width: 94%;
+                        }
+                    }
+                }
               
                 .instagram {
                     .insta-list {
@@ -920,18 +988,21 @@ body {
                 }
             }
             .description {
-                margin: 48px 0 38px;
-                padding: 0 14%;
+                margin: 65px 0 70px;
+                padding: 0 23%;
                 .title {
-                    font-size: 60px;
+                    font-size: 50px;
                 }
                 .text {
-                    font-size: 100px;
-                    line-height: 90px;
+                    font-size: 80px;
+                    line-height: 80px;
                     margin: 30px 0 0;
                     &:after {
                         margin: 40px auto 45px;
                     }
+                }
+                .button {
+                    margin-top: 0;
                 }
             }
             .pages-list {
@@ -1043,12 +1114,12 @@ body {
                     color: #fff;
                     font-family: $font-text;
                     .item {
-                        border-left: 2px solid #fff;
+                        border-left: 1px solid #b5eae0;
                         text-align: center;
                         width: 25%;
                         padding: 85px 0 90px;
                         &:last-of-type {
-                            border-right: 2px solid #fff;
+                            border-right: 1px solid #b5eae0;
                         }
                         .number {
                             display: block;
@@ -1073,17 +1144,19 @@ body {
                         margin: 0;
                         display: flex;
                         justify-content: space-between;
-                        padding:0 30px 50px;
+                        padding:0 30px 48px;
                         border-bottom: 2px solid#e5e5e5;
                         .item {
                             margin-bottom: 0;
-                            display: block;
+                            display: flex;
                             margin-right: 20px;
                             width: 30%;
+                            height: 100%;
                             .photo {
                                 width: 30px;
+                                height: 30px;
                                 padding: 0;
-                                margin: 0 30px 80px 0;
+                                margin-right: 30px;
                             }
                             .description {
                                 .title {
@@ -1094,6 +1167,7 @@ body {
                                 .info {
                                     font-size: 15px;
                                     line-height: 24px;
+                                    height: 100%;
                                 }
                             }
                             &:last-of-type {
@@ -1108,10 +1182,12 @@ body {
                         padding: 50px 30px 0;
                         .item {
                             margin-bottom: 0;
-                            display: block;
+                            display: flex;
                             margin-right: 20px;
+                            height: 100%;
                             .photo {
                                 width: 30px;
+                                height: 30px;
                                 padding: 0;
                                 margin: 0 30px 80px 0;
                             }
@@ -1123,6 +1199,7 @@ body {
                                 }
                                 .info {
                                     font-size: 15px;
+                                    height: 100%;
                                     line-height: 24px;
                                 }
                             }
@@ -1134,15 +1211,20 @@ body {
                 }
             }
             .devices {
-                padding: 50px 0 0;
+                padding: 50px 0 328px;
                 background-size: 1200px;
                 .image-block {
                     .tablet {
-                    width: 270px;
+                        width: 280px;
+                        height: 330px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-61%);
                     }
                     .phone {
-                        width: 112px;
-                        right: 33%;
+                        width: 116px;
+                        right: 37%;
                     }
                 }
             }
@@ -1163,6 +1245,7 @@ body {
                             border: 1px solid#e5e5e5;
                             width: 100%;
                             margin: 0;
+                            margin-top: 10px;
                             position: relative;
                             .icon {
                                 width: 30px;
@@ -1252,16 +1335,18 @@ body {
                         
                     }
                     .arrow-block {
-                        .arrow {
-                            position: absolute;
-                            width: 30px;
-                            bottom: 50%;
-                        }
-                        .left {
-                            left: 7%;
-                        }
-                        .right {
-                            right: 7%;
+                        .link {
+                            .arrow {
+                                position: absolute;
+                                width: 20px;
+                                bottom: 50%;
+                            }
+                            .left {
+                                left: 7%;
+                            }
+                            .right {
+                                right: 7%;
+                            }
                         }
                     }
                 }
@@ -1537,16 +1622,18 @@ body {
                         }
                     }
                     .arrow-block {
-                        .arrow {
-                            position: absolute;
-                            width: 30px;
-                            bottom: 50%;
-                        }
-                        .left {
-                            left: 7%;
-                        }
-                        .right {
-                            right: 7%;
+                        .link {
+                            .arrow {
+                                position: absolute;
+                                width: 20px;
+                                bottom: 50%;
+                            }
+                            .left {
+                                left: 7%;
+                            }
+                            .right {
+                                right: 7%;
+                            }
                         }
                     }
                 }
@@ -1576,40 +1663,47 @@ body {
                             width: 100%;
                         }
                         .info {
-                            margin-top: 20px;
+                            margin: 20px 0;
                             padding: 0;
                             text-align: left;
-                            height: 130px;
+                            height: 120px;
                             .title {
                                 height: 26px;
                             }
                             .text {
                                 font-size: 15px;
-                                line-height: 24px;
-                                margin: 15px 0;
+                                line-height: 20px;
+                                
+                                margin: 10px 0 0;
                             }
                         }
                         .interest {
+                            justify-content: start;
                             .views {
+                                margin-right: 10px;
                                 .number {
                                     font-size: 15px;
+                                    font-style: italic;
+                                    color: $light-font;
                                     line-height: 24px;
                                     margin: 0 0 0 5px;
                                 }
                             }
                             .comment {
                                 padding: 0;
-                                .namber {
+                                .number {
                                     font-size: 15px;
+                                    font-style: italic;
+                                    color: $light-font;
                                     line-height: 24px;
                                     margin: 0 0 0 5px;
                                 }
                             }
                         }
                         .date {
-                            padding: 15px;
-                            bottom: 59%;
-                            left: -8%;
+                            padding: 8px 10px;
+                            bottom: 195px;
+                            left: -5%;
                             .num {
                                 font-size: 30px;
                             }
@@ -1628,6 +1722,7 @@ body {
                 padding: 75px 120px 65px;
                 .contacts {
                     margin-right: 25px;
+                    width: 43%;
                     .logo-link {
                         font-size: 46px;
                         margin-bottom: 40px;
@@ -1692,6 +1787,7 @@ body {
                     margin-right: 50px;
                     display: flex;
                     flex-direction: column;
+                    width: 27%;
                     .item {
                         margin-bottom: 15px;
                         .link {
@@ -1717,8 +1813,9 @@ body {
                 }
                 .instagram {
                     .insta-list {
+                            justify-content: start;
                         .link {
-                            margin-bottom: 5px;
+                            margin-right: 2px;
                             .photo {
                                 width: 85px;
                             }
@@ -1761,7 +1858,14 @@ body {
                 }
             }
             .description {
-                margin: 40px 0;
+                margin: 61px 0;
+                padding: 0 21%;
+                .title {
+                    font-size: 55px;
+                }
+                .text {
+                    font-size: 90px;
+                }
             }
         }
         .wrapper {
@@ -1798,10 +1902,10 @@ body {
             }
             .devices {
                 background-size: 100%;
-                padding: 45px 0 0;
+                padding: 45px 0 334px;
                 .image-block {
                     .phone {
-                        right: 36%;
+                        right: 38%;
                     }
                 }
             }
@@ -1845,9 +1949,22 @@ body {
             }
             .blog-block {
                 padding: 105px 200px 115px;
+                .blog-list {
+                    .item {
+                        .date {
+
+                        }
+                    }
+                }
             }
             .contacts-block {
                 padding: 75px 200px 65px;
+                .blog-list {
+                    width: 26%
+                }
+                .instagram {
+                    width: 29%;
+                }
             }
         }
     }
@@ -1862,8 +1979,8 @@ body {
                 }
             }
             .description {
-                margin: 60px 0;
-                padding: 0 7%;
+                margin: 64px 0;
+                padding: 0 11%;
                 .title {
                     font-size: 72px;
                 }
@@ -1884,13 +2001,14 @@ body {
                 padding: 110px 300px 115px;
             }
             .devices {
-                padding: 65px 0 0;
+                padding: 65px 0 403px;
                 .image-block {
                     .tablet {
                         width: 335px;
+                        height: 390px;
                     }
                     .phone {
-                        width: 139px;
+                        width: 134px;
                     }
                 }
             }
@@ -1901,11 +2019,13 @@ body {
                 padding: 70px 300px;
                 .comment-content {
                     .arrow-block {
-                        .left {
-                            left: 15%;
-                        }
-                        .right {
-                            right: 15%;
+                        .link {
+                            .left {
+                                left: 15%;
+                            }
+                            .right {
+                                right: 15%;
+                            }   
                         }
                     }
                 }
@@ -1925,11 +2045,13 @@ body {
                 padding: 70px 300px;
                 .comment-content {
                     .arrow-block {
-                        .left {
-                            left: 15%;
-                        }
-                        .right {
-                            right: 15%;
+                        .link {
+                            .left {
+                                left: 15%;
+                            }
+                            .right {
+                                right: 15%;
+                            }   
                         }
                     }
                 }
@@ -1966,8 +2088,8 @@ body {
                 }
             }
             .description {
-                padding: 0 8%;
-                margin: 80px 0;
+                padding: 0 7%;
+                margin: 87px 0;
                 .text {
                     font-size: 150px;
                     line-height: 140px;
@@ -1983,15 +2105,21 @@ body {
             }
             .instruments {
                 padding: 110px 350px 115px;
+                .instruments-list {
+                    .instruments-list-one {
+                        padding: 0 30px 46px;
+                    }
+                }
             }
             .devices {
-                padding: 72px 0 0;
+                padding: 72px 0 485px;
                 .image-block {
                     .tablet {
                         width: 400px;
+                        height: 474px;
                     }
                     .phone {
-                        width: 155px;
+                        width: 158px;
                     }
                 }
             }
@@ -2018,6 +2146,15 @@ body {
             }
             .contacts-block {
                 padding: 75px 350px 65px;
+                .contacts-block {
+                    width: 40%;
+                }
+                .blog-list {
+                    width: 30%;
+                }
+                .instagram {
+                    width: 30%;
+                }
             }
        }
 
