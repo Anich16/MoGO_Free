@@ -970,7 +970,7 @@ body {
         .header {
             background: url(images/header.jpg);
             background-repeat: no-repeat;
-            background-size: 1200px;
+            background-size: 100% 100%;
             padding: 20px 120px;
             .main-menu {
                 .lago-block {
@@ -1008,7 +1008,7 @@ body {
                 }
             }
             .description {
-                margin: 65px 0 70px;
+                margin: 150px 0;
                 padding: 0 23%;
                 .title {
                     font-size: 50px;
@@ -1880,7 +1880,7 @@ body {
     body {
         .header {
             padding: 20px 200px;
-            background-size: 100%;
+            
             .main-menu {
                 .logo-block {
                     margin-right: 10%;
@@ -1890,7 +1890,7 @@ body {
                 }
             }
             .description {
-                margin: 61px 0;
+                
                 padding: 0 21%;
                 .title {
                     font-size: 55px;
@@ -2011,7 +2011,7 @@ body {
                 }
             }
             .description {
-                margin: 64px 0;
+                
                 padding: 0 11%;
                 .title {
                     font-size: 72px;
@@ -2121,7 +2121,7 @@ body {
             }
             .description {
                 padding: 0 7%;
-                margin: 87px 0;
+                
                 .text {
                     font-size: 150px;
                     line-height: 140px;
